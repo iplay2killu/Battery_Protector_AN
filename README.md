@@ -1,53 +1,48 @@
-| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C5 | ESP32-C6 | ESP32-C61 | ESP32-H2 | ESP32-P4 | ESP32-S2 | ESP32-S3 | Linux |
-| ----------------- | ----- | -------- | -------- | -------- | -------- | --------- | -------- | -------- | -------- | -------- | ----- |
+# ✅ ToDo - Battery Protector Project
 
-# Hello World Example
+This file tracks the progress of hardware and firmware tasks. Please update it before each pull request!
 
-Starts a FreeRTOS task to print "Hello World".
+---
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+## 📅 Immediate Tasks
 
-## How to use example
+- [ ] **Test all peripherals on PCB Rev 1.0.0** _(Blocks ordering PCB Rev 2.0.0)_
+  - [x] Accelerometer ✅
+  - [ ] Piezo sensor amplifier circuit
+    - Must order 7BB-20-3 piezoelectric transducer
+    - Solder to board before testing
+  - [x] Buzzer ✅
+  - [ ] USB Micro ORing issue investigation
+    - 5V buck converter remains disabled after 5V_MCU removal (Micro USB unplug)
+  - [ ] Noise issue investigation
+    - Audible humming from inductor + buzzer > 40V input
+    - Ideas: increase switching frequency? Move buzzer away from high-noise areas
+  - [ ] Gate Driver functionality test
+  - [ ] Wifi Testing 
 
-Follow detailed instructions provided specifically for this example.
+- [ ] **Schematic design migration to KiCAD**
+  - Clean up symbols/footprints
+  - Update based on Rev 1.0.0 testing outcomes
 
-Select the instructions depending on Espressif chip installed on your development board:
+---
 
-- [ESP32 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/index.html)
-- [ESP32-S2 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html)
+## 🚧 In Progress
 
+_(Move tasks here if you're currently working on them)_
 
-## Example folder contents
+---
 
-The project **hello_world** contains one source file in C language [hello_world_main.c](main/hello_world_main.c). The file is located in folder [main](main).
+## ✅ Completed
 
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both).
+_(Keep a record of major finished items)_
+- [x] Accelerometer testing
+- [x] Buzzer testing
 
-Below is short explanation of remaining files in the project folder.
+---
 
-```
-├── CMakeLists.txt
-├── pytest_hello_world.py      Python script used for automated testing
-├── main
-│   ├── CMakeLists.txt
-│   └── hello_world_main.c
-└── README.md                  This is the file you are currently reading
-```
+## 📌 Notes
 
-For more information on structure and contents of ESP-IDF projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the ESP-IDF Programming Guide.
+- **Next milestone:** Complete peripheral validation to enable PCB Rev 2.0.0 order
+- Assign initials or GitHub handles to tasks if needed (e.g., `@username`)
 
-## Troubleshooting
-
-* Program upload failure
-
-    * Hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
-    * The baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
-
-## Technical support and feedback
-
-Please use the following feedback channels:
-
-* For technical queries, go to the [esp32.com](https://esp32.com/) forum
-* For a feature request or bug report, create a [GitHub issue](https://github.com/espressif/esp-idf/issues)
-
-We will get back to you as soon as possible.
+---
